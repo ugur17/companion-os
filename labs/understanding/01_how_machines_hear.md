@@ -61,3 +61,7 @@ How does Whisper choose the next token?
 Why can a bigger model understand the same audio better?
 
 How is all of this related to Transformers and LLMs?
+
+Actions:
+I have watched 3B1B Neural networks video, i had a sense on how it works but not very clear for now. When i give hand written number to the computer, it does not see it as an image, instead it sees it as pixels. Then gives weights between 0 and 1 to each pixel depends on the brightness of that pixel. To be able to fit values between 1 and 0, we use sigmoid function which makes a lot of sense.
+There are hidden layers between the first and the last step. Each neuron in a layer has a connection with each neuron in the next layer. To represent them, we use matrix multiplication which also makes sense. But those connections and how does function them are very unclear for now. Will continue by understanding the logic behind of linear algebre first, then will go back to neural networks. 
