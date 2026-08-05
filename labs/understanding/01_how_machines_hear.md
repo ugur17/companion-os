@@ -62,6 +62,17 @@ Why can a bigger model understand the same audio better?
 
 How is all of this related to Transformers and LLMs?
 
-Actions:
+Actions: (August 4, 2026)
 I have watched 3B1B Neural networks video, i had a sense on how it works but not very clear for now. When i give hand written number to the computer, it does not see it as an image, instead it sees it as pixels. Then gives weights between 0 and 1 to each pixel depends on the brightness of that pixel. To be able to fit values between 1 and 0, we use sigmoid function which makes a lot of sense.
 There are hidden layers between the first and the last step. Each neuron in a layer has a connection with each neuron in the next layer. To represent them, we use matrix multiplication which also makes sense. But those connections and how does function them are very unclear for now. Will continue by understanding the logic behind of linear algebre first, then will go back to neural networks. 
+
+
+(August 5, 2026):
+I started linear algebra of 3B1B, and learned that the span of two vectors is the all possible combinations you can get by using scalar multiplication and adding of each vector. If they are not in the same line, you can get the whole 2D dimensional vectors by doing that. (av + bw)
+
+If you have two vectors that is not in the same line in 3 dimension, span will be a plane. If you have 3 different vectors that has different span, you can get the whole 3 dimension.
+
+If you have different vectors, and if you can remove one of them without reducing the total span, we call it linearly dependant. Vice versa is linearly independent. 
+(av + bw ?= u)
+
+IMPORTANT: The 'basis' of a vector space is a set of 'linearly independent' vectors that 'span' the full space.
