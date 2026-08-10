@@ -63,8 +63,13 @@ Why can a bigger model understand the same audio better?
 How is all of this related to Transformers and LLMs?
 
 Actions: (August 4, 2026)
-I have watched 3B1B Neural networks video, i had a sense on how it works but not very clear for now. When i give hand written number to the computer, it does not see it as an image, instead it sees it as pixels. Then gives weights between 0 and 1 to each pixel depends on the brightness of that pixel. To be able to fit values between 1 and 0, we use sigmoid function which makes a lot of sense.
+I have watched 3B1B Neural networks video, i had a sense on how it works but not very clear for now. When i give hand written number to the computer, it does not see it as an image, instead it sees it as pixels. Then gives weights between 0 and 1 to each pixel depends on the brightness of that pixel.(This is wrong, will be corrected in the next sections.) To be able to fit values between 1 and 0, we use sigmoid function which makes a lot of sense.
 There are hidden layers between the first and the last step. Each neuron in a layer has a connection with each neuron in the next layer. To represent them, we use matrix multiplication which also makes sense. But those connections and how does function them are very unclear for now. Will continue by understanding the logic behind of linear algebre first, then will go back to neural networks. 
+(August 8, 2026)
+I rewatched it after linear algebra recap. 
+W.a + b
+bias makes the equation affine transformation here, so it is not linear anymore. When we have a sigmoid function or ReLu function, we are able to things that we can not do with linear transformation. 
+As an architecture, we decide how many layers will be used, and network will learn itself weights and biases according to the training data. Weights describes how much and in what way each neuron will affect the next layer. Bias means the threshold before we decide which affect we will be taken into account and which one has meaningful affect.
 
 
 (August 5, 2026):
@@ -76,3 +81,15 @@ If you have different vectors, and if you can remove one of them without reducin
 (av + bw ?= u)
 
 IMPORTANT: The 'basis' of a vector space is a set of 'linearly independent' vectors that 'span' the full space.
+
+LINEAR TRANSFORMATION:
+If we want to have a function which transforms each point or vectors in a space, we use matrices. (Correction: matrices only represent linear transformations)When we multiply any point with a matrix, we basically get the transformed point of that point. To be linear for a transformation, origin should stay same, parallels should stay parallel. 
+The most important thing I understood is that a linear transformation preserves linear combinations.
+T(av+bw)=aT(v)+bT(w)
+We represent any vector in a space using i and j basis vectors. A matrix is a represent of transformed i and transformed j. 
+
+MATRIX MULTIPLICATION:
+If i want to make two transformations consecutively, i will need to multiply two matrices, and each matrix symbolize each transformation. Order matters here, because which transformation i did first, changes the result. 
+
+3D MATRIX MULTIPLICATION:
+We have i, j and k here, everything else is the same with 2D matrix. 
