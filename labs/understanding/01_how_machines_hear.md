@@ -93,3 +93,7 @@ If i want to make two transformations consecutively, i will need to multiply two
 
 3D MATRIX MULTIPLICATION:
 We have i, j and k here, everything else is the same with 2D matrix. 
+
+August 11, 2026:
+I have started to watch calculus series of 3B1B, because while learning gradient descent, i came across to the multi variable derivative and i realized i needed to understand it first. The notation of derivative d shows the change while the range is approaching zero, the notation of integral is coming from SUM and integral represent the addition of infinite number pieces in a graph. We are dealing with changes here. 
+Derivative is not only a slope of the graph. It is how sensitive is the output according to very tiny changes in the input. The tangent line appears naturally when the interval between to point approaches zero. 
