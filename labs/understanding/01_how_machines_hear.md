@@ -5,18 +5,28 @@ The first speech to text experiment worked, but I realized that I do not underst
 ## Questions
 
 What is sound physically?
+Sound is a form of energy. When i speak, the energy that my vocal cord produces using air in my lungs vibrates the air molecules. It creates a air pressure difference and that way each molekul transfers this energy to each other.
 
 How does a microphone convert sound into numbers?
+Microphone takes this pressure difference (energy), vibrates the bobin according to the pattern it receives, then the movement of the bobin creates load difference (voltage) and it creates electric current. That way microphone takes mechanic energy, convert it to magnetic energy and then electric energy. Then it creates a continuous analog electric values. 
 
 What is analog and digital?
+Analog is continuous but digital values are discrete values. Computers only accept digital values since it uses bits to represent values.
+
+Why we need ADC (Analog to Digital Converter)?
+Because computers only can take digital values which is discrete.
 
 What is a sample?
+sample is how many takes we get in a waveform per second
 
 Why did we use 16,000 samples per second?
+because using 16000 sample, we can represent voices up to 8 kHz and it involves most range a human can hear. Nyquist says we should have at least the sample of 2 times of frequency. It is because we should have at least 2 sample per cycle. 
 
 What is sample rate?
+Sample rate means how many instant values we get per second from voice waves.
 
 What is bit depth?
+bit depth is how sensitive we represent each sample. It means how many bits we are using to represent each sample value
 
 What is mono?
 
