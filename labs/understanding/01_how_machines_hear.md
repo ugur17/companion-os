@@ -44,15 +44,21 @@ bit depth is how sensitive we represent each sample. It means how many bits we a
 (August 26, 2026):
 What is mono?
 Mono means 1 channel. It means there is only 1 sound source.
+UPDATE:
+channel and source are two different things. Source can be multiple but channel still can be mono. Because if there is cat, human and tv in a room, it means there are 3 sound sources. But if we process them in mono channel, sound signal wont know which one is coming from which source.
 
 What is stereo?
 Stereo means 2 channels. For example, in stereo headsets, while watching a movie, i hear things with direction. If the man talks in rigth side of the scene, i feel it was coming from right, like in real life.
 
 How can stereo contain spatial information?
 Because there are two different sound source. Sound source means channel here.
+UPDATE:
+source does not mean channel, as explained above.
 
 Why did Whisper need mono audio?
 I am not sure if we have to use mono audio in whisper or can we also use stereo channel, but i think it is beacuse we chosed like this. Because it will be enough for our companion project.
+UPDATE:
+It is not because we chosed like this for pleasure. It is because Whisper's model accepts mono channel.
 
 What is frequency?
 Frequency is how tight the signal cycles to each other. Calculates the cycle amount per second.
@@ -70,7 +76,7 @@ What does `16 kHz, 16 bit PCM` actually mean?
 It means 16kHz sampled 16 bit represented form of sound.
 
 What is M4A?
-This is a compressed representation of sound. So it seizes less room in the memory.
+This is a compressed representation of sound. So it seizes less room in the memory. This is not the name of compression algorithm, it is a container contains metadata, header etc.
 
 What is a WAV file?
 WAV is also a format with header. In the header part we tell which representation we use, and in the body there can be PCM. We need header to tell computer how to read below.
@@ -98,21 +104,57 @@ creates test.wav file
 It takes the .m4a file, decode it to original version, resampling the sound using values we described
 QUESTION: What do we mean by original version? How do we resample if we have digital representation since we can not have analog values in computer?
 
+(August 28, 2026)
 What is a spectrogram?
+We have complicated waveform which have different sine wave in it, if we apply fourier transform to it, we get spectogram as a result. We represent waveform time-amplitude graph, but spectogram shows us time - frequency graph. These have names but i dont remember rn.
+UPDATE:
+When we apply Fouries Transform, we lose time information. To be able to retrieve it, we divide it little time windows. We get spectrum for each window adn then we get spectogram. 
+time-amplitude graph -> time domain
+time-frequency graph -> frequency domain
 
 What is Fourier Transform and why do we need it here?
+Fourier Transform takes a complicated wave and make them seperate into their original frequencies. 
+UPDATE:
+Instead of 'original frequencies' above, i should say frequency components.
 
 What is a Mel spectrogram?
+Mel spectogram is another version of spectogram which we add brightness which means strength(magnitude).
+UPDATE:
+This is completely wrong. Spectogram already has brightness to represent strength. The difference of Mel Spectogram, frequency axis in frequency domain is being represented more suitable for human ear. A human can recognize the difference between 20hz and 120 hz than 19100 hz and 19200 hz even though the difference is only 100 hz. So Mel Spectogram shows smaller values more detailed than the bigger values in the axis.
+
+What is Mel filter bank?
+We basically group frequency values into one. So we dont deal with infinite number amount of frequency one by one, instead we deal with these groupings.
+UPDATE:
+We dont deal with infinite number amount of frequency values already.
+
+What is log Mel spectogram?
+I could not digest this actually.
+UPDATE:
+Logarithm compresses the large range of Mel spectogram values, making the input values more manageable for the neural network.
+
+What is actually stored inside ggml-base.bin?
+I dont know yet.
+UPDATE:
+We store trained weight values inside.
+
+Why was the model 141 MB?
+I dont know yet.
+UPDATE:
+Because there millions of numerical weight values. Size of the file depends on how many weights we have.
 
 Why did Whisper print n_mels = 80?
+It means Whisper represent the frequency axis using 80 Mel Frequency Bands.
+
+Peripheral nedir? 
+GPIO nedir?
+Flash nedir? 
+PSRAM nedir?
+Embedded nedir? 
+Breakout nedir?
 
 What is a vector in this context?
 
 What are neural network weights?
-
-What is actually stored inside ggml-base.bin?
-
-Why was the model 141 MB?
 
 What does n_audio_layer = 6 mean?
 
